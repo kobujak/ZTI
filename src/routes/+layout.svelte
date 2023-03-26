@@ -1,53 +1,58 @@
-<script>
-	import Header from './Header.svelte';
-	import './styles.css';
-</script>
+<nav>
 
-<div class="app">
-	<Header />
-
-	<main>
-		<slot />
-	</main>
-
-	<footer>
-		<p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
-	</footer>
+    <div class="container">
+    <h1>Firma XxX</h1>
+	<ul>
+		<li>
+			<a href="/">Home</a>
+		</li>
+		<li>
+			<a href="/about">O nas</a>
+		</li>
+		<li>
+			<a href="/produkty">Produkty</a>
+		</li>
+		<li>
+			<a href="/blog">Blog</a>
+		</li>
+		<li>
+			<a href="/login">Logowanie</a>
+		</li>
+	</ul>
 </div>
-
+</nav>
+<div class="container">
+    <slot />
+</div>
 <style>
-	.app {
+    nav {
+        padding:  0.5em;
+        background-color: #24170f;
+        color: white;
+    }
+
+    .container{
+        display: flex;
+    }
+	ul{
 		display: flex;
-		flex-direction: column;
-		min-height: 100vh;
+        margin: 0;
+        margin-left: auto;
+		list-style: none;
+        font-size: 1.5em;
 	}
+	
+	li{
+		margin-right: 20px;
+	}
+    h1{
+        margin: 0;
+        font-size: 2em;
+        
+    }
+    a{
+        text-decoration: none;
+        color: white;
+    }
 
-	main {
-		flex: 1;
-		display: flex;
-		flex-direction: column;
-		padding: 1rem;
-		width: 100%;
-		max-width: 64rem;
-		margin: 0 auto;
-		box-sizing: border-box;
-	}
-
-	footer {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		padding: 12px;
-	}
-
-	footer a {
-		font-weight: bold;
-	}
-
-	@media (min-width: 480px) {
-		footer {
-			padding: 12px 0;
-		}
-	}
 </style>
