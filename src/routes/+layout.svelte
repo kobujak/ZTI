@@ -1,58 +1,37 @@
-<nav>
+<script>
+	import Navbar from "../components/Navbar.svelte"
+</script>
 
-    <div class="container">
-    <h1>Firma XxX</h1>
-	<ul>
-		<li>
-			<a href="/">Home</a>
-		</li>
-		<li>
-			<a href="/about">O nas</a>
-		</li>
-		<li>
-			<a href="/produkty">Produkty</a>
-		</li>
-		<li>
-			<a href="/blog">Blog</a>
-		</li>
-		<li>
-			<a href="/login">Logowanie</a>
-		</li>
-	</ul>
-</div>
-</nav>
-<div class="container">
-    <slot />
-</div>
-<style>
-    nav {
-        padding:  0.5em;
-        background-color: #24170f;
-        color: white;
-    }
+<Navbar/>
 
-    .container{
-        display: flex;
-    }
-	ul{
-		display: flex;
-        margin: 0;
-        margin-left: auto;
-		list-style: none;
-        font-size: 1.5em;
-	}
+<slot />
+
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+		:global(*) {
+			font-family: 'Poppins', sans-serif;
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			text-decoration: none;
+			color: var(--light);
+		}
+		/* color variables */
+		:global(:root){
+			--primary: #033461;
+			--secondary: #F3A712;
+			--dark: #222222;
+			--light: #ebebeb;
+
+
+		}
+		:global(body){
+				background-color: #555555;
+
+		}
+		
+		
+	</style>
+
 	
-	li{
-		margin-right: 20px;
-	}
-    h1{
-        margin: 0;
-        font-size: 2em;
-        
-    }
-    a{
-        text-decoration: none;
-        color: white;
-    }
-
-</style>
